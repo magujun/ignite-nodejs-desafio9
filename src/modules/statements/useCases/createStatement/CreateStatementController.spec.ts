@@ -95,7 +95,7 @@ describe("Create Statement", () => {
         description: "Withdraw 100",
       })
       .set({
-        Authorization: 'invalidToken',
+        Authorization: "invalidToken",
       });
     expect(response4.status).toBe(401);
   });
@@ -107,13 +107,11 @@ describe("Create Statement", () => {
       password: "userPassword",
     };
     const newUser = await createUser.execute(user);
-    const response4 = await request(app)
-      .post("/statements/withdraw")
-      .send({
-        user_id: newUser.id,
-        amount: 100,
-        description: "Withdraw 100",
-      })
+    const response4 = await request(app).post("/statements/withdraw").send({
+      user_id: newUser.id,
+      amount: 100,
+      description: "Withdraw 100",
+    });
     expect(response4.status).toBe(401);
   });
 });
