@@ -51,5 +51,8 @@ export class Statement {
     if (!this.id) {
       this.id = uuid();
     }
+    if (!this.sender_id) {
+      this.sender_id = "None";
+    }
   }
 }
