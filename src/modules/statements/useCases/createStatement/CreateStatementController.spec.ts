@@ -32,6 +32,7 @@ describe("Create Statement", () => {
       .post("/statements/deposit")
       .send({
         user_id: newUser.id,
+        sender_id: newUser.id,
         amount: 100,
         description: "Deposit 100",
       })
@@ -45,6 +46,7 @@ describe("Create Statement", () => {
       .post("/statements/withdraw")
       .send({
         user_id: newUser.id,
+        sender_id: newUser.id,
         amount: 50,
         description: "Withdraw 50",
       })
@@ -71,6 +73,7 @@ describe("Create Statement", () => {
       .post("/statements/withdraw")
       .send({
         user_id: newUser.id,
+        sender_id: newUser.id,
         amount: 100,
         description: "Withdraw 100",
       })
@@ -91,6 +94,7 @@ describe("Create Statement", () => {
       .post("/statements/withdraw")
       .send({
         user_id: newUser.id,
+        sender_id: newUser.id,
         amount: 100,
         description: "Withdraw 100",
       })
@@ -109,6 +113,7 @@ describe("Create Statement", () => {
     const newUser = await createUser.execute(user);
     const response4 = await request(app).post("/statements/withdraw").send({
       user_id: newUser.id,
+      sender_id: newUser.id,
       amount: 100,
       description: "Withdraw 100",
     });
