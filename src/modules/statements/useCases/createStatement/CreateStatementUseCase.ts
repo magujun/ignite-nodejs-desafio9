@@ -17,7 +17,7 @@ export class CreateStatementUseCase {
 
   async execute({
     user_id,
-    sender_id,
+    operator,
     type,
     amount,
     description,
@@ -28,7 +28,7 @@ export class CreateStatementUseCase {
       throw new CreateStatementError.UserNotFound();
     }
 
-    if (type === "withdraw" || type === "transfer") {
+    if (type === "withdraw" || (type === "transfer" && user_id !== operator)) {
       const { balance } = await this.statementsRepository.getUserBalance({
         user_id,
       });
@@ -40,7 +40,7 @@ export class CreateStatementUseCase {
 
     const statementOperation = await this.statementsRepository.create({
       user_id,
-      sender_id,
+      operator,
       type,
       amount,
       description,

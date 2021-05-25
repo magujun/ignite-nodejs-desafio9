@@ -28,22 +28,22 @@ describe("Show Balance", () => {
       email: user.email,
       password: user.password,
     });
-    const deposit = await request(app)
+    await request(app)
       .post("/statements/deposit")
       .send({
         user_id: newUser.id,
-        sender_id: newUser.id,
+        operator: newUser.id,
         amount: 100,
         description: "Deposit 100",
       })
       .set({
         Authorization: `bearer ${userAuth.body.token}`,
       });
-    const withdraw = await request(app)
+    await request(app)
       .post("/statements/withdraw")
       .send({
         user_id: newUser.id,
-        sender_id: newUser.id,
+        operator: newUser.id,
         amount: 50,
         description: "Withdraw 50",
       })
@@ -58,7 +58,6 @@ describe("Show Balance", () => {
       .set({
         Authorization: `bearer ${userAuth.body.token}`,
       });
-    // console.log(deposit.body, userAuth.body, result.body);
     expect(result.body).toHaveProperty("statement");
     expect(result.body.statement.length).toBe(2);
     expect(result.body).toHaveProperty("balance");

@@ -29,7 +29,7 @@ Para isso existem alguns requisitos:
   ```json
   {
     "id": "4d04b6ec-2280-4dc2-9432-8a00f64e7930",
-    "sender_id": "cfd06865-11b9-412a-aa78-f47cc3e52905",
+    "operator": "cfd06865-11b9-412a-aa78-f47cc3e52905",
     "amount": 100,
     "description": "Transferência de valor",
     "type": "transfer",
@@ -38,7 +38,7 @@ Para isso existem alguns requisitos:
   }
   ```
 
-  O campo `sender_id` é o `id` do usuário que enviou a transferência.
+  O campo `operator` é o `id` do usuário que enviou a transferência.
   O campo `type` exibe o tipo da operação, que nesse caso é `transfer`.
 
 ---

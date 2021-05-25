@@ -16,7 +16,7 @@ export class accountsTable1616682561481 implements MigrationInterface {
             type: "uuid",
           },
           {
-            name: "sender_id",
+            name: "operator",
             type: "uuid",
           },
           {

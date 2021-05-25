@@ -2,15 +2,12 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "allowJs": true,
-    "checkJs": true,
-    "rootDir": "./",
-    "strict": true,
-    "strictPropertyInitialization": false,
-    "baseUrl": "./",
+    "allowJs": false,
+    "checkJs": false,
+    "baseUrl": "./src",
     "paths": {
       "@root/*": ["../*"],
-      "@src/*": ["src/*"],
+      "@src/*": ["./*"],
       "@modules/*": ["modules/*"],
       "@config/*": ["config/*"],
       "@shared/*": ["shared/*"],
@@ -23,7 +20,9 @@
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "strictPropertyInitialization": false,
+    "strict": true
   },
   "type": "module"
 }
