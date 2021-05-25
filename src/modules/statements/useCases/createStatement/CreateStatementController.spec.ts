@@ -93,8 +93,8 @@ describe("Create Statement", () => {
         Authorization: `bearer ${userAuth.body.token}`,
       });
 
-    const url = "/statements/transfer/" + newUser2.id;
-    console.log(url, newUser.id, newUser2.id, userAuth.body);
+    // const url = "/statements/transfer/" + newUser2.id;
+    // console.log(url, newUser.id, newUser2.id, userAuth.body);
 
     const response = await request(app)
       .post("/statements/transfer/" + newUser2.id)
