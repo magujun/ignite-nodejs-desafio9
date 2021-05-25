@@ -53,7 +53,7 @@ UNIT | INT
 
 [✓] | [✓] Show User Profile
 
-[✓] | [✓] Create Statement
+[✓] | [✓] Create Statement (deposit/withdraw/transfer)
 
 [✓] | [✓] Show account balance
 
